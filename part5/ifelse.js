@@ -20,12 +20,12 @@
 
 
 
-let nama = ""; 
-let role = "";
+let nama = "budi"; 
+let role = "ga ada";
 
 if (nama.length === 0 ) {
     console.log ("Nama Harus diisi")
-} else if (role === 0 && nama === role){
+} else if (role.length === 0){
     console.log ("Pilih role untuk Mulai")
 } else if (role == "knight"){
     console.log("halo",role,nama ,"kamu dapat menyerang dengan senjatamu!")
@@ -33,7 +33,7 @@ if (nama.length === 0 ) {
     console.log("halo",role,nama, "kamu akan membantu temanmu yang terluka")
 } else if  (role == "wizard"){
     console.log("halo",role,nama, "ciptakan keajaiban yang membantu kemenanganmu!")
-} else if (role == "" ){
+} else{
     console.log(nama, "Lu jadi NPC")
 } 
 
