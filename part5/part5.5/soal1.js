@@ -16,7 +16,7 @@ let seventh = 'it!';
 
 //code here
 // ---------------------------------------
-console.log(word,second,third,fourth,fifth,sixth,seventh);
+console.log(word+ " " +second+ " " +third + " " + fourth + " " + fifth + " " + sixth + " " +seventh);
 // ---------------------------------------
 
 // 2. Index Accessing - 1 by 1
