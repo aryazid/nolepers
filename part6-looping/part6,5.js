@@ -81,14 +81,15 @@ for (let i = 0; i < 100; i+=9){
 
 //5. Bintang asteriks
 //Problem buatlah bintang seperti berikut
-let x = 5;
+let n = 5;
 let string = "";
-for (let i = 1; i <= x ; i++){
-    for (let j = 0; j < i ; j++){
-        string += "*";
-    }
-    string += "<br>";
-} 
+for (let i = 1; i <= n; i++) {
+  for (let j = 0; j < i; j++) {
+    string += "*";
+  }
+  string += "\n";
+}
+console.log(string);
 //hasilnya
 //*
 //**
