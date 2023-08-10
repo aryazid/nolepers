@@ -34,7 +34,7 @@ console.log('')
 
 function xo(str) {
     if (str.length % 2 == 0) {
-      // jumlah genap, lanjut cek apakah x dan o jumlah nya sama
+      // Cek Genap
       let xo = 0;
       let ox = 0;
       for (let i = 0; i < str.length ; i++) {
