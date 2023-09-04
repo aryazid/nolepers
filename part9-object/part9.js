@@ -23,15 +23,20 @@ console.log(angkaPrima(6)); // false
 console.log(angkaPrima(23)); // true
 console.log(angkaPrima(33)); // false
 
+console.log('=================')
 //Soal 2
 //cari faktor persekutuan terbesar
 function fpb(angka1, angka2) {
-  const obj = {}
-  if (angka1 && angka2 % 12 === 0) {
-    obj[angka1, angka2];
-    return angka1 /2 && angka2 /2;
+  if (angka1 === 0|| angka2 === 0) {
+    return Math.max(angka1, angka2); //fpb 0
+  }
+  while (angka2 !== 0){
+    const temp = angka2;
+    angka2 = angka1 % angka2;
+    angka1 = temp;
   }
   // you can only write your code here!
+  return angka1
 }
 
 // TEST CASES
