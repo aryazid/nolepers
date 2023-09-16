@@ -4,6 +4,18 @@ Implementasikan function deepSum untuk mendapatkan jumlah pertambahan dari angka
 
 function deepSum (arr) {
     // Code disini
+    let hasil = 0;
+    for (let i = 0 ; i < arr.length ; i++){
+      for (let a = 0 ; a < arr[i].length ; a++){
+        for (let b = 0 ; b < arr[i][a].length ; b++){
+          hasil += arr[i][a][b];
+        }
+      }
+    } if (!arr.length){
+      return "No Number"
+    } else {
+      return hasil
+    }
   }
   
   //TEST CASE
@@ -47,7 +59,7 @@ function deepSum (arr) {
   ])); // 156
   
   console.log(deepSum([])); // No number
-
+  console.log("=============")
 /* Soal 2
 Diberikan function naikAngkot(listPenumpang) yang akan menerima satu parameter berupa array dua dimensi. Function akan me-return array of object.
 
@@ -58,6 +70,30 @@ Contoh: input: [['Dimitri', 'B', 'F']] output: [{ penumpang: 'Dimitri', naikDari
 
 function naikAngkot(arrPenumpang) {
     rute = ['A', 'B', 'C', 'D', 'E', 'F'];
+    
+    let nampul = []
+    for (let a = 0 ; a < arrPenumpang.length ; a++){
+      for (let i = 0 ; i < rute.length ; i++){
+        if (rute[i] === arrPenumpang[a][1]){
+          let indexini = rute.indexOf(arrPenumpang[a][2]);
+          let indexitu = rute.indexOf(arrPenumpang[a][1]);
+          let jarak = Math.abs(indexini - indexitu);
+          let biaya = jarak*2000;
+          let angkoto = {
+            penumpang: arrPenumpang[a][0],
+            naikDari: arrPenumpang[a][1],
+            tujuan: arrPenumpang[a][2],
+            bayar: biaya
+          }
+          if (!arrPenumpang.length){
+            nampul.push();
+          } else {
+            nampul.push(angkoto)
+          }
+        } 
+      } 
+    }
+    return nampul
     //your code here
   }
   
@@ -67,11 +103,27 @@ function naikAngkot(arrPenumpang) {
   //   { penumpang: 'Icha', naikDari: 'A', tujuan: 'B', bayar: 2000 } ]
   
   console.log(naikAngkot([])); //[]
-
+  console.log("==================")
 
 /* Soal 3 */
 function highestScore (students) {
   // Code disini
+  let objst = {};
+  for (let i = 0 ; i < students.length ; i++){
+    if (!objst[students[i].class]) {
+      objst[students[i].class] = {
+        name: "",
+        score: 0
+      };
+    }
+    // Cek paling gede.
+    if (students[i].score > objst[students[i].class].score) {
+      objst[students[i].class].score = students[i].score;
+      objst[students[i].class].name = students[i].name;
+    }
+  }
+  
+  return objst;
 }
 
 // TEST CASE
@@ -140,7 +192,7 @@ console.log(highestScore([
 
 
 console.log(highestScore([])); //{}
-
+console.log("===================")
 /* Soal 4
 Implementasikan function graduates untuk mendapatkan daftar student yang lulus dengan aturan:
 
@@ -162,8 +214,24 @@ Output yang diharapkan berupa Object dengan format sebagai berikut:
 }
 */
 
-function graduates (students) {
+function graduates (students2) {
+  let objk = {};
   // Code disini
+  for (let i = 0; i < students2.length; i++) {
+    if (students2[i].score > 75) {
+      if (!objk[students2[i].class]) {
+        objk[students2[i].class] = [];
+      }
+      let objen = {
+        name: students2[i].name,
+        score: students2[i].score
+      };
+
+      objk[students2[i].class].push(objen);
+    }
+  }
+
+  return objk;
 }
 
 console.log(graduates([
