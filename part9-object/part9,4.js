@@ -17,21 +17,20 @@ misal faktronya angka 1 hanyalah
 Return 2
 */
 function digitPerkalianMinimum(angka) {
-  let minDigits = angka.toString().length; // Initialize with the number of digits in angka.
-
+  let huge = 9999
   for (let i = 1; i <= Math.sqrt(angka); i++) {
     if (angka % i === 0) {
       const factor1 = i;
       const factor2 = angka / i;
-      const multiplication = (factor1 * factor2).toString().length;
-
-      if (multiplication < minDigits) {
-        minDigits = multiplication;
+      const digitCount = String(factor1).length + String(factor2).length;
+      
+      if (digitCount < huge) {
+        huge = digitCount;
       }
     }
   }
-
-  return minDigits;
+  
+  return huge;
 }
   
   // TEST CASES
