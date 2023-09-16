@@ -3,7 +3,7 @@
 //cek google bagi yang ga tau apa itu angka prima
 function angkaPrima(angka) {
   const obej = {};
-  
+
   for (let i = 2; i <= Math.sqrt(angka); i++) {
     // cek primanya
     if (angka % i === 0) {
@@ -27,10 +27,10 @@ console.log('=================')
 //Soal 2
 //cari faktor persekutuan terbesar
 function fpb(angka1, angka2) {
-  if (angka1 === 0|| angka2 === 0) {
+  if (angka1 === 0 || angka2 === 0) {
     return Math.max(angka1, angka2); //fpb 0
   }
-  while (angka2 !== 0){
+  while (angka2 !== 0) {
     const temp = angka2;
     angka2 = angka1 % angka2;
     angka1 = temp;
