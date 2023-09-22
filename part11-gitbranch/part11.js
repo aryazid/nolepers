@@ -11,10 +11,12 @@ Karena attack akan dikurangi 2, maka setiap attack akan menghasilkan damage 8
 */
 
 function attack (damage) {
+  return damage - 2
     // Code disini
   }
   
   function damageCalculation (numberOfAttacks, damagePerAttack) {
+    return numberOfAttacks * attack(damagePerAttack)
     // Code disini
   }
   
@@ -36,6 +38,27 @@ Jika input adalah string kosong ('') maka return array kosong
 */
 
 function meleeRangedGrouping (str) {
+  if (!str.length){
+    return "[]"
+  } else {
+    let arrh = [[],[]];
+    let arrstr = str.split(",");
+    for (let i = 0 ; i < arrstr.length ; i++){
+      let arrtype = arrstr[i].split("-");
+      let rangeds = '';
+      let melees = '';
+      if(arrtype[1] === "Ranged"){
+        rangeds = (arrtype[0]);
+        arrh[0].push(rangeds);
+      } else if (arrtype[1] === "Melee"){
+        melees = (arrtype[0]);
+        arrh[1].push(melees);
+      } 
+      
+    
+  } return arrh
+  
+  } 
     //your code here
   }
   
