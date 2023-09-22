@@ -219,9 +219,12 @@ function graduates (students2) {
   // Code disini
   for (let i = 0; i < students2.length; i++) {
     if (students2[i].score > 75) {
+      // Check if the class key already exists in the objk.
       if (!objk[students2[i].class]) {
         objk[students2[i].class] = [];
       }
+
+      // Create an object for the students2[i] and push it to the corresponding class array.
       let objen = {
         name: students2[i].name,
         score: students2[i].score
